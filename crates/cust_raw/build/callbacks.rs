@@ -75,7 +75,7 @@ impl FunctionRenames {
                 Ok(expanded) => expanded,
                 Err(e) => panic!("Failed to expand macros: {}", e),
             };
-            let expanded = str::from_utf8(&expanded).unwrap();
+            let expanded = std::str::from_utf8(&expanded).unwrap();
 
             let mut remaps = bimap::BiHashMap::new();
             for line in expanded.lines().rev() {
